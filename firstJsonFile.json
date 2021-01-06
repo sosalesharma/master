@@ -2,8 +2,9 @@
   "DeviceModel": "UC-ENGINE",
   "PropertyName": "Logitech Status",
   "Values": {
-    "Online":"Online",
-    "Offline":"Offline"
-	  },
-  "id": "42464648-2b34-4b84-a9fa-4a3d9f7dc022"
+    "Online": "Online",
+    "Offline": "Offline"
+  },
+  "id": "42464648-2b34-4b84-a9fa-4a3d9f7dc022",
+  "id": "42464648-2b34-4b84-a9fa-4a3d9f7dc023"
 }
