@@ -1,0 +1,15 @@
+app_setting_name = "AccountActivationLink"
+app_api_name = "All"
+env_value_all = "3"
+env_value_dv2 = "10"
+env_value_dv3 = None
+env_value_ve2 = ""
+env_value_hqe = None
+env_value_qe3 = None
+env_value_pre_e = None
+env_value_pre_w = None
+env_value_prd_e = None
+env_value_prd_w = None
+env_value = None # value should be 'dynamic' inorder to get the id of the app service should be fetched from the az portal
+jira_ticket = 'XIOCLD-9629'
+file_path = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud\\testcase\\AppSetting.json'

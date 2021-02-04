@@ -1,0 +1,41 @@
+[
+  {
+    "App Settings": "AccountActivationLink",
+    "API": "All",
+    "DV2USE": "10",
+    "DV3USE": "3",
+    "VE2USE": "",
+    "HQEUSE": "3",
+    "QE3USE": "3",
+    "PREUSE": "3",
+    "PREUSW": "3",
+    "PRDUSE": "3",
+    "PRDUSW": "3"
+  },
+  {
+    "App Settings": "AccountActivationLink",
+    "API": "All1",
+    "DV2USE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "DV3USE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "VE2USE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "HQEUSE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "QE3USE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "PREUSE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "PREUSW": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "PRDUSE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
+    "PRDUSW": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password"
+  },
+  {
+    "App Settings": "AccountActivationLink",
+    "API": "-zuoraaccountsvc-api",
+    "DV2USE": "<https://qe-portal.crestron.io/Activate?",
+    "DV3USE": "<https://qe-portal.crestron.io/Activate?",
+    "VE2USE": "<https://qe-portal.crestron.io/Activate?",
+    "HQEUSE": "<https://qe-portal.crestron.io/Activate?",
+    "QE3USE": "<https://qe-portal.crestron.io/Activate?",
+    "PREUSE": "<https://qe-portal.crestron.io/Activate?",
+    "PREUSW": "<https://qe-portal.crestron.io/Activate?",
+    "PRDUSE": "<https://qe-portal.crestron.io/Activate?",
+    "PRDUSW": "<https://qe-portal.crestron.io/Activate?"
+  }
+]
