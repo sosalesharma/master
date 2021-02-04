@@ -1,8 +1,11 @@
 import json
 import sys
 import logging as logger
+import git
+from git import Repo
+from git import RemoteProgress
 
-
+'''
 def append_app_settings(file_path, add_content,app_api):
     try:
         print("Open App Setting JSON file and append with the new API entry")
@@ -84,3 +87,18 @@ def generate_app_setting_schema(app_set_name, app_api, env_value_all=None, env_v
         "PRDUSW": prd_w
     }
     return append_content
+'''
+
+repo_path = 'C:\\Users\\psharma\\Source\\Repos\\CrestronEngineering\\XIOCLOUD'
+def verify_git_status():
+    git_repo = git.Repo(repo_path)
+    #print(git_repo.git.status())
+    #print(git_repo.git.pull())
+    print(git_repo.git.checkout('XIOCloud_1.20')) # Your branch is up to date with 'origin/XIOCloud_1.20'.
+    # git_ref = git.cmd.Git(repo_path)
+    # git_status = git_ref.pull()
+    git_repo.git.add('somefile')
+    git_repo.git.commit(m='commit message')
+
+
+verify_git_status()

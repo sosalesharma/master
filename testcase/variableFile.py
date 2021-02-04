@@ -13,3 +13,6 @@ env_value_prd_w = None
 env_value = None # value should be 'dynamic' inorder to get the id of the app service should be fetched from the az portal
 jira_ticket = 'XIOCLD-9629'
 file_path = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud\\testcase\\AppSetting.json'
+git_branch = 'master'
+git_cw_dir = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud'
+repo_path = 'C:\\Users\\psharma\\Source\\Repos\\CrestronEngineering\\XIOCLOUD'
