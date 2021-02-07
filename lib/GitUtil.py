@@ -3,6 +3,7 @@ import sys
 import logging as logger
 import git
 import re
+import lib.CommonUtil as utility
 from git import Repo
 from git import RemoteProgress
 
@@ -37,7 +38,7 @@ class GitUtility():
     def git_pull_oper(self, repo_path, git_branch, git_branch_re, git_pull_success_status):
         status = False
         git_repo = git.Repo(repo_path)
-        if CommomUtility.verify_git_branch(repo_path, git_branch, git_branch_re):
+        if utility.verify_git_branch(repo_path, git_branch, git_branch_re):
             git_pull_status = git_repo.git.pull()
             if git_pull_success_status in git_pull_status:
                 print("Git branch %s is up to date" % git_branch)
