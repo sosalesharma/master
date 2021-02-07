@@ -1,5 +1,5 @@
 import lib.CommonUtil as utility
-import logging as logger
+from goto import with_goto
 import variableFile
 import json
 
@@ -24,64 +24,63 @@ git_pull_success_status = variableFile.git_pull_success_status
 jira_ticket = variableFile.jira_ticket
 
 class AppSettings():
-
     def sync_local_to_remote_repo(self):
         try:
-            git_pull_status = utility.CommomUtility.git_pull_oper(repo_path=repo_path, git_branch=git_branch, git_branch_re=git_branch_re, git_pull_success_status=git_pull_success_status)
+            self.flag = False
+            git_pull_status = utility.CommomUtility.git_pull_oper(repo_path=repo_path, git_branch=git_branch,
+                                                                  git_branch_re=git_branch_re,
+                                                                  git_pull_success_status=git_pull_success_status)
             if git_pull_status:
                 print("Local repo is upto date with the remote repo")
+                self.flag = True
 
             else:
                 print("Local repo is unable to sync with the remote repo")
+
         except Exception as err:
             print("Local repo sync with the remote repo failed ")
 
     def add_app_setting(self, app_setting_name, app_api_name, app_setting_file):
-        try:
-            with open(app_setting_file) as app_file:
-                init_data = json.load(app_file)
+        if self.flag:
+            try:
+                self.app_set_status = False
+                with open(app_setting_file) as app_file:
+                    init_data = json.load(app_file)
 
-            for items in init_data:
-                if app_setting_name == items['App Settings'] and app_api_name == items['API']:
-                    print("App setting with the App name already exist. Aborting the operation")
-                    break
-            else:
-                print("Creating the json entry for app setting")
+                for items in init_data:
+                    if app_setting_name == items['App Settings'] and app_api_name == items['API']:
+                        print("App setting with the App name already exist. Aborting the operation")
+                        break
+                else:
+                    print("Creating the json entry for app setting")
 
-                new_app_set_entry = utility.CommomUtility.generate_app_setting_schema(app_set_name, app_api, env_value_all=env_value_all,
-                                                                        env_value=env_value, env_dv2=dv2, env_dv3=dv3,
-                                                                        env_ve2=ve2, env_hqe=hqe, env_qe3=qe3,
-                                                                        env_pre_e=pre_e, env_pre_w=pre_w, env_prd_e=prd_e,
-                                                                        env_prd_w=prd_w)
-                result = utility.CommomUtility.append_app_settings(file_path=app_setting_file,
-                                                     add_content=new_app_set_entry,
-                                                     app_api=app_api_name)
-            if result:
-                print("Adding new App settings to the file is successful")
-                status = True
+                    new_app_set_entry = utility.CommomUtility.generate_app_setting_schema(app_set_name, app_api,
+                                                                                          env_value_all=env_value_all,
+                                                                                          env_value=env_value, env_dv2=dv2,
+                                                                                          env_dv3=dv3, env_ve2=ve2,
+                                                                                          env_hqe=hqe, env_qe3=qe3,
+                                                                                          env_pre_e=pre_e, env_pre_w=pre_w,
+                                                                                          env_prd_e=prd_e, env_prd_w=prd_w)
 
+                    result = utility.CommomUtility.append_app_settings(file_path=app_setting_file,
+                                                                       add_content=new_app_set_entry,
+                                                                       app_api=app_api_name)
+                if result:
+                    print("Adding new App settings to the file is successful")
+                    self.app_set_status = True
 
-
-
-      # if app_setting_name and app_api_name in open(app_setting_file).read():
-      #   print("App setting with the App name already exist. Aborting the operation")
-      #   else:
-      #       result = utility.append_app_settings(file_path=app_setting_file,
-      #                                            add_content=new_app_setting_entry,
-      #                                            app_api=app_api_name)
-      #   if result:
-      #     print("Adding new App settings to the file is successful")
-      #
-        except Exception as err:
-            print("Adding new App settings to the file failed ")
-            status = False
-
-        return status
+            except Exception as err:
+                print("Adding new App settings to the file failed ")
+                status = False
 
 
 
-    add_app_setting(app_setting_name=app_set_name,
-                    app_api_name=app_api,
-                    app_setting_file=file_path)
+    def push_files_to_remote_repo(self):
+        if self.app_set_status:
+            try:
+                git_push_status = utility.CommomUtility.git_push_oper(repo_path=repo_path, jira_ticket=jira_ticket)
+                if git_push_status:
+                    print("App files push to remote repo is successful")
 
-
+            except Exception as err:
+                print("App files push to remote repo is successful failed ")

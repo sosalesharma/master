@@ -38,7 +38,7 @@ class GitUtility():
     def git_pull_oper(self, repo_path, git_branch, git_branch_re, git_pull_success_status):
         status = False
         git_repo = git.Repo(repo_path)
-        if utility.verify_git_branch(repo_path, git_branch, git_branch_re):
+        if GitUtility.verify_git_branch(repo_path, git_branch, git_branch_re):
             git_pull_status = git_repo.git.pull()
             if git_pull_success_status in git_pull_status:
                 print("Git branch %s is up to date" % git_branch)
@@ -49,11 +49,11 @@ class GitUtility():
             print("Directory is not a git repo or git repo is not mapped to appropriate branch")
         return status
 
-    def git_push_oper(self, repo_path, git_branch, git_branch_re, git_pull_success_status, jira_ticket):
+    def git_push_oper(self, repo_path, jira_ticket):
             status = False
             git_repo = git.Repo(repo_path)
             git_status = (git_repo.git.status())
-            track_files = ['CommonUtil.py', 'variableFile.py']
+            #track_files = ['CommonUtil.py', 'variableFile.py']
             #re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.json)|(?:.xml)))'
             re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.py)))'
             git_add_files = re.findall(re_add_files, git_status)
@@ -63,4 +63,4 @@ class GitUtility():
             git_repo.git.commit(m=jira_ticket)
             origin = git_repo.remote(name='origin')
             git_push_status = origin.push()
-            print(git_push_status)
+            return git_push_status
