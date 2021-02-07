@@ -1,19 +1,6 @@
 [
   {
     "App Settings": "AccountActivationLink",
-    "API": "All",
-    "DV2USE": "10",
-    "DV3USE": "3",
-    "VE2USE": "",
-    "HQEUSE": "3",
-    "QE3USE": "3",
-    "PREUSE": "3",
-    "PREUSW": "3",
-    "PRDUSE": "3",
-    "PRDUSW": "3"
-  },
-  {
-    "App Settings": "AccountActivationLink",
     "API": "All1",
     "DV2USE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
     "DV3USE": "Proxy.HttpsSettings.Password,Proxy.HttpSettings.Password,IpTable.Password",
