@@ -14,5 +14,7 @@ env_value = None # value should be 'dynamic' inorder to get the id of the app se
 jira_ticket = 'XIOCLD-9629'
 file_path = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud\\testcase\\AppSetting.json'
 git_branch = 'master'
+git_branch_re = "'origin\/(.*)'"
+git_pull_success_status = 'up to date'
 git_cw_dir = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud'
 repo_path = 'C:\\Users\\psharma\\Source\\Repos\\CrestronEngineering\\XIOCLOUD'
