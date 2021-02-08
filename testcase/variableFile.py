@@ -17,4 +17,5 @@ git_branch = 'master'
 git_branch_re = "'origin\/(.*)'"
 git_pull_success_status = 'up to date'
 git_cw_dir = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud'
-repo_path = 'C:\\Users\\psharma\\Source\\Repos\\CrestronEngineering\\XIOCLOUD'
+#repo_path = 'C:\\Users\\psharma\\Source\\Repos\\CrestronEngineering\\XIOCLOUD'
+repo_path =
