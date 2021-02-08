@@ -56,7 +56,7 @@ def git_push_oper(repo_path, jira_ticket):
         git_status = (git_repo.git.status())
         #track_files = ['CommonUtil.py', 'variableFile.py']
         #re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.json)|(?:.xml)))'
-        re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.py)))'
+        re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.json)|(?:.py)))'
         git_add_files = re.findall(re_add_files, git_status)
         for files in git_add_files:
             git_repo.git.add(files)

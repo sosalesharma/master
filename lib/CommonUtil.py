@@ -1,4 +1,5 @@
 import json
+import time
 import sys
 import logging as logger
 import git
@@ -23,6 +24,7 @@ def append_app_settings(file_path, add_content, app_api):
         f1 = open(file_path, 'w+')
         json.dump(obj=data, fp=f1, indent=2)
         f1.close()
+        time.sleep(5)
         return True
     except Exception as err:
         file_data = open(file_path, 'w+')
