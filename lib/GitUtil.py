@@ -51,10 +51,8 @@ def git_pull_oper(repo_path, git_branch, git_branch_re, git_pull_success_status)
     return status
 
 def git_push_oper(repo_path, jira_ticket):
-        status = False
         git_repo = git.Repo(repo_path)
         git_status = (git_repo.git.status())
-        #track_files = ['CommonUtil.py', 'variableFile.py']
         #re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.json)|(?:.xml)))'
         re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.json)|(?:.py)))'
         git_add_files = re.findall(re_add_files, git_status)
