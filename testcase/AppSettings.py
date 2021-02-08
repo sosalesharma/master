@@ -47,7 +47,6 @@ class AppSettings:
 
     def add_app_setting(self):
         global app_set_name, app_api, env_value_all, dv2, dv3, ve2, hqe, qe3, pre_e, pre_w, prd_e, prd_w
-        self.flag = True
         if self.flag:
             try:
                 print("This is add_app_setting method")
@@ -95,5 +94,6 @@ class AppSettings:
                 print("App files push to remote repo is successful failed ")
 
 app_set_test = AppSettings()
-#app_set_test.sync_local_to_remote_repo()
+app_set_test.sync_local_to_remote_repo()
 app_set_test.add_app_setting()
+app_set_test.push_files_to_remote_repo()
