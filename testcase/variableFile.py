@@ -1,5 +1,5 @@
 app_setting_name = "AccountActivationLink"
-app_api_name = "-zuoraaccountsvc-api1"
+app_api_name = "All"
 env_value_all = "3"
 env_value_dv2 = "10"
 env_value_dv3 = None
