@@ -16,7 +16,7 @@ pre_e = variableFile.env_value_pre_e
 pre_w = variableFile.env_value_pre_w
 prd_e = variableFile.env_value_prd_e
 prd_w = variableFile.env_value_prd_w
-file_path = variableFile.file_path
+app_set_file_path = variableFile.app_set_file_path
 git_branch = variableFile.git_branch
 git_branch_re = variableFile.git_branch_re
 repo_path = variableFile.repo_path
@@ -46,10 +46,13 @@ class AppSettings:
             print("Local repo sync with the remote repo failed ")
 
     def add_app_setting(self):
+        global app_set_name, app_api, env_value_all, dv2, dv3, ve2, hqe, qe3, pre_e, pre_w, prd_e, prd_w
+        self.flag = True
         if self.flag:
             try:
+                print("This is add_app_setting method")
                 self.app_set_status = False
-                with open(app_set_name) as app_file:
+                with open(app_set_file_path) as app_file:
                     init_data = json.load(app_file)
 
                 for items in init_data:
@@ -59,17 +62,17 @@ class AppSettings:
                 else:
                     print("Creating the json entry for app setting")
 
-                    new_app_set_entry = utility.generate_app_setting_schema(app_set_name, app_api,
-                                                                                          env_value_all=env_value_all,
-                                                                                          env_value=env_value, env_dv2=dv2,
-                                                                                          env_dv3=dv3, env_ve2=ve2,
-                                                                                          env_hqe=hqe, env_qe3=qe3,
-                                                                                          env_pre_e=pre_e, env_pre_w=pre_w,
-                                                                                          env_prd_e=prd_e, env_prd_w=prd_w)
+                    new_app_set_entry = utility.generate_app_setting_schema(app_set_name=app_set_name, app_api=app_api,
+                                                                            env_value_all=env_value_all,
+                                                                            env_value=env_value, env_dv2=dv2,
+                                                                            env_dv3=dv3, env_ve2=ve2, env_hqe=hqe,
+                                                                            env_qe3=qe3, env_pre_e=pre_e,
+                                                                            env_pre_w=pre_w, env_prd_e=prd_e,
+                                                                            env_prd_w=prd_w)
+                    print(new_app_set_entry)
 
-                    result = utility.append_app_settings(file_path=repo_path,
-                                                                       add_content=new_app_set_entry,
-                                                                       app_api=app_api)
+                    result = utility.append_app_settings(file_path=app_set_file_path, add_content=new_app_set_entry,
+                                                         app_api=app_api)
                 if result:
                     print("Adding new App settings to the file is successful")
                     self.app_set_status = True
@@ -81,6 +84,7 @@ class AppSettings:
 
 
     def push_files_to_remote_repo(self):
+        global repo_path, jira_ticket
         if self.app_set_status:
             try:
                 git_push_status = git.git_push_oper(repo_path=repo_path, jira_ticket=jira_ticket)
@@ -91,4 +95,5 @@ class AppSettings:
                 print("App files push to remote repo is successful failed ")
 
 app_set_test = AppSettings()
-app_set_test.sync_local_to_remote_repo()
+#app_set_test.sync_local_to_remote_repo()
+app_set_test.add_app_setting()

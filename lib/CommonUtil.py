@@ -7,7 +7,7 @@ from git import Repo
 from git import RemoteProgress
 
 
-def append_app_settings(self, file_path, add_content,app_api):
+def append_app_settings(file_path, add_content, app_api):
     try:
         print("Open App Setting JSON file and append with the new API entry")
         with open(file_path) as f:
@@ -31,7 +31,7 @@ def append_app_settings(self, file_path, add_content,app_api):
         return False
 
 
-def generate_app_setting_schema(self, app_set_name, app_api, env_value_all=None, env_value=None, env_dv2=None, env_dv3=None,
+def generate_app_setting_schema(app_set_name, app_api, env_value_all=None, env_value=None, env_dv2=None, env_dv3=None,
                                 env_ve2=None, env_hqe=None, env_qe3=None, env_pre_e=None, env_pre_w=None,
                                 env_prd_e=None, env_prd_w=None):
     # if env_value_all != None:
