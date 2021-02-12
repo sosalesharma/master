@@ -1,0 +1,27 @@
+{
+  "id": "",
+  "modelType": "",
+  "supportedActions": [
+    "Reboot",
+    "Firmware"
+  ],
+  "supportedStatusFields": [
+    "Device Connection Status",
+    "Adapter 1 Is DHCP Enabled",
+    "Settings Delivery Status",
+    "Request Device Log Files"
+  ],
+  "supportedFileTypes": [
+    "Firmware"
+  ],
+  "Components": {
+    "DeviceList": "DeviceList",
+    "Action": "MergeAction",
+    "DeviceInfo": "DeviceInfo",
+    "Ethernet": "Ethernet",
+    "AutoUpdateMaster": "AutoUpdateMaster",
+    "SystemClock": "SystemClock",
+    "SystemVersions": "SystemVersions",
+    "DeviceCapabilities": "DeviceCapabilities"
+  }
+}

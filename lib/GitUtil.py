@@ -56,9 +56,12 @@ def git_push_oper(repo_path, jira_ticket):
         #re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.json)|(?:.xml)))'
         re_add_files = '((?:[A-Za-z_]+\/){1,10}[A-Za-z]+(?:(?:.json)|(?:.py)))'
         git_add_files = re.findall(re_add_files, git_status)
+        print("Files to add it to git are %s" % git_add_files)
         for files in git_add_files:
             git_repo.git.add(files)
+            print(files)
 
+        print("Jira ticket number is %s" % jira_ticket)
         git_repo.git.commit(m=jira_ticket)
         origin = git_repo.remote(name='origin')
         git_push_status = origin.push()

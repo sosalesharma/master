@@ -1,0 +1,9 @@
+{
+  "DeviceModel": "",
+  "PropertyName": "Adapter 1 Is DHCP Enabled",
+  "Values": {
+    "Disable": false,
+    "Enable": true
+  },
+  "id": ""
+}

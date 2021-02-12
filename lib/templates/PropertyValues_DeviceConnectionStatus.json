@@ -1,0 +1,9 @@
+{
+  "DeviceModel": "",
+  "PropertyName": "Device Connection Status",
+  "Values": {
+    "Offline": "OFFLINE",
+    "Online": "ONLINE"
+  },
+  "id": ""
+}

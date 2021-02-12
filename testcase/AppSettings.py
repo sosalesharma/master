@@ -47,9 +47,8 @@ class AppSettings:
 
     def add_app_setting(self):
         global app_set_name, app_api, env_value_all, dv2, dv3, ve2, hqe, qe3, pre_e, pre_w, prd_e, prd_w
-        if self.flag:
-            try:
-                print("This is add_app_setting method")
+        try:
+            if self.flag:
                 self.app_set_status = False
                 with open(app_set_file_path) as app_file:
                     init_data = json.load(app_file)
@@ -76,22 +75,21 @@ class AppSettings:
                     print("Adding new App settings to the file is successful")
                     self.app_set_status = True
 
-            except Exception as err:
-                print("Adding new App settings to the file failed ")
-                status = False
+        except Exception as err:
+            print("Adding new App settings to the file failed ")
 
 
 
     def push_files_to_remote_repo(self):
         global repo_path, jira_ticket
-        if self.app_set_status:
-            try:
+        try:
+            if self.app_set_status:
                 git_push_status = git.git_push_oper(repo_path=repo_path, jira_ticket=jira_ticket)
                 if git_push_status:
                     print("App files push to remote repo is successful")
 
-            except Exception as err:
-                print("App files push to remote repo is successful failed ")
+        except Exception as err:
+            print("App files push to remote repo is failed ")
 
 app_set_test = AppSettings()
 app_set_test.sync_local_to_remote_repo()

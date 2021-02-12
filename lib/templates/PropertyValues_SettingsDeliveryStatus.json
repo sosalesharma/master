@@ -1,0 +1,9 @@
+{
+  "DeviceModel": "",
+  "PropertyName": "Settings Delivery Status",
+  "Values": {
+    "Blocked": "Blocked",
+    "Unblocked": "Unblocked"
+  },
+  "id": ""
+}
