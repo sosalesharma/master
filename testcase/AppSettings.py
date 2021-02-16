@@ -25,12 +25,11 @@ jira_ticket = variableFile.jira_ticket
 
 class AppSettings:
     def __init__(self):
-        print("This is a init method of a class")
+        print("Addressing the App Settings ticket %s" % jira_ticket)
 
     def sync_local_to_remote_repo(self):
         global repo_path, git_branch, git_branch_re, git_pull_success_status
         try:
-            print("This is a 'sync_local_to_remote_repo' method")
             self.flag = False
             git_pull_status = git.git_pull_oper(repo_path=repo_path, git_branch=git_branch,
                                                 git_branch_re=git_branch_re,
@@ -43,13 +42,13 @@ class AppSettings:
                 print("Local repo is unable to sync with the remote repo")
 
         except Exception as err:
-            print("Local repo sync with the remote repo failed ")
+            print("Local repo sync with the remote repo failed %s" % err)
 
     def add_app_setting(self):
         global app_set_name, app_api, env_value_all, dv2, dv3, ve2, hqe, qe3, pre_e, pre_w, prd_e, prd_w
+        self.app_set_status = False
         try:
             if self.flag:
-                self.app_set_status = False
                 with open(app_set_file_path) as app_file:
                     init_data = json.load(app_file)
 
@@ -76,9 +75,7 @@ class AppSettings:
                     self.app_set_status = True
 
         except Exception as err:
-            print("Adding new App settings to the file failed ")
-
-
+            print("Adding new App settings to the file failed %s" % err)
 
     def push_files_to_remote_repo(self):
         global repo_path, jira_ticket
@@ -89,7 +86,7 @@ class AppSettings:
                     print("App files push to remote repo is successful")
 
         except Exception as err:
-            print("App files push to remote repo is failed ")
+            print("App files push to remote repo is failed %s" % err)
 
 app_set_test = AppSettings()
 app_set_test.sync_local_to_remote_repo()

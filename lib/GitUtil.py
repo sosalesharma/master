@@ -37,7 +37,6 @@ def verify_git_branch(repo_path, git_branch, git_branch_re):
 
 def git_pull_oper(repo_path, git_branch, git_branch_re, git_pull_success_status):
     status = False
-    print("this is a git_pull_oper library method")
     git_repo = git.Repo(repo_path)
     if verify_git_branch(repo_path, git_branch, git_branch_re):
         git_pull_status = git_repo.git.pull()
@@ -59,7 +58,6 @@ def git_push_oper(repo_path, jira_ticket):
         print("Files to add it to git are %s" % git_add_files)
         for files in git_add_files:
             git_repo.git.add(files)
-            print(files)
 
         print("Jira ticket number is %s" % jira_ticket)
         git_repo.git.commit(m=jira_ticket)

@@ -11,8 +11,8 @@ from git import RemoteProgress
 def append_app_settings(file_path, add_content, app_api):
     try:
         print("Open App Setting JSON file and append with the new API entry")
-        with open(file_path) as f:
-            init_data = json.load(f)
+        with open(file_path) as file:
+            init_data = json.load(file)
             data = init_data
             if app_api == 'All' or app_api == 'all':
                 data.insert(0, add_content)
@@ -21,10 +21,10 @@ def append_app_settings(file_path, add_content, app_api):
         print("Appending with the new API entry is successful")
 
         print("Write the new content to the App Setting file")
-        f1 = open(file_path, 'w+')
-        json.dump(obj=data, fp=f1, indent=2)
-        f1.close()
-        time.sleep(5)
+        write_to_file = open(file_path, 'w+')
+        json.dump(obj=data, fp=write_to_file, indent=2)
+        write_to_file.close()
+        time.sleep(2)
         return True
     except Exception as err:
         file_data = open(file_path, 'w+')
