@@ -16,7 +16,6 @@ def verify_git_branch(repo_path, git_branch, git_branch_re):
         git_status = (git_repo.git.status())
         reg_result = re.search(git_branch_re, git_status)
         if git_branch == reg_result.group(1):
-            print(reg_result.group(1))
             print("Git repo is in %s branch and is mapped to valid branch" % reg_result.group(1))
             status = True
         else:

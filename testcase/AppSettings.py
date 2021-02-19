@@ -70,9 +70,9 @@ class AppSettings:
 
                     result = utility.append_app_settings(file_path=app_set_file_path, add_content=new_app_set_entry,
                                                          app_api=app_api)
-                if result:
-                    print("Adding new App settings to the file is successful")
-                    self.app_set_status = True
+                    if result:
+                        print("Adding new App settings to the file is successful")
+                        self.app_set_status = True
 
         except Exception as err:
             print("Adding new App settings to the file failed %s" % err)

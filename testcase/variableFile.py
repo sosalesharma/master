@@ -14,6 +14,7 @@ env_value = None # value should be 'dynamic' inorder to get the id of the app se
 jira_ticket = 'XIOCLD-9629'
 app_set_file_path = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud\\testcase\\AppSetting.json'
 device_model_type_file = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud\\lib\\templates\\devicemodeltypes.json'
+device_view_model_file = 'C:\\Users\\psharma\\PycharmProjects\\XioCloud\\lib\\templates\\deviceviewmodel.json'
 device_model_type = 'PC-350V-12'
 git_branch = 'master'
 git_branch_re = "'origin\/(.*)'"
