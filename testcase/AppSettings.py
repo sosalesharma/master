@@ -3,10 +3,13 @@ import lib.GitUtil as git
 import variableFile
 import json
 
+repo_path = variableFile.repo_path
+git_branch = variableFile.git_branch
+git_branch_re = variableFile.git_branch_re
+git_pull_success_status = variableFile.git_pull_success_status
 app_set_name = variableFile.app_setting_name
 app_api = variableFile.app_api_name
 env_value_all = variableFile.env_value_all
-env_value = variableFile.env_value
 dv2 = variableFile.env_value_dv2
 dv3 = variableFile.env_value_dv3
 ve2 = variableFile.env_value_ve2
@@ -16,11 +19,8 @@ pre_e = variableFile.env_value_pre_e
 pre_w = variableFile.env_value_pre_w
 prd_e = variableFile.env_value_prd_e
 prd_w = variableFile.env_value_prd_w
+env_value = variableFile.env_value
 app_set_file_path = variableFile.app_set_file_path
-git_branch = variableFile.git_branch
-git_branch_re = variableFile.git_branch_re
-repo_path = variableFile.repo_path
-git_pull_success_status = variableFile.git_pull_success_status
 jira_ticket = variableFile.jira_ticket
 
 class AppSettings:
@@ -45,7 +45,8 @@ class AppSettings:
             print("Local repo sync with the remote repo failed %s" % err)
 
     def add_app_setting(self):
-        global app_set_name, app_api, env_value_all, dv2, dv3, ve2, hqe, qe3, pre_e, pre_w, prd_e, prd_w
+        global app_set_file_path, app_set_name, app_api, env_value_all, env_value, dv2, dv3, ve2, hqe, qe3, \
+            pre_e, pre_w, prd_e, prd_w
         self.app_set_status = False
         try:
             if self.flag:
