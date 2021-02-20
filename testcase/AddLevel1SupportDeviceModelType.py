@@ -86,7 +86,6 @@ class AddL1SupportDeviceModelType:
     def push_files_to_remote_repo(self):
         global repo_path, jira_ticket
         try:
-
             if self.model_type_flag:
                 git_push_status = git.git_push_oper(repo_path=repo_path, jira_ticket=jira_ticket)
                 if git_push_status:
