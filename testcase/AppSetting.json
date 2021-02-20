@@ -24,5 +24,18 @@
     "PREUSW": "<https://qe-portal.crestron.io/Activate?",
     "PRDUSE": "<https://qe-portal.crestron.io/Activate?",
     "PRDUSW": "<https://qe-portal.crestron.io/Activate?"
+  },
+  {
+    "App Settings": "AccountActivationLink",
+    "API": "-zuoraaccountsvc-api123",
+    "DV2USE": "10",
+    "DV3USE": "3",
+    "VE2USE": "",
+    "HQEUSE": "3",
+    "QE3USE": "3",
+    "PREUSE": "20",
+    "PREUSW": "3",
+    "PRDUSE": "3",
+    "PRDUSW": "3"
   }
 ]
