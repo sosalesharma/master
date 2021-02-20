@@ -1,0 +1,354 @@
+{
+  "id": "PC-350V-12",
+  "SettingsViewModel": [
+    {
+      "id": "system-setup",
+      "visible": true,
+      "groupid": "groupSystemSetup",
+      "selected": true,
+      "policy": true,
+      "settings": [],
+      "categories": [
+        {
+          "id": "network",
+          "visible": true,
+          "groupid": "groupNetwork",
+          "selected": true,
+          "policy": false,
+          "categories": [
+            {
+              "id": "network-configuration",
+              "visible": true,
+              "policy": false,
+              "settings": [
+                {
+                  "id": "domain",
+                  "hardPath": "Ethernet.DomainName",
+                  "softPath": "Ethernet.DomainName",
+                  "default": "",
+                  "type": "TextBox",
+                  "required": true,
+                  "mask": "",
+                  "placeholderKey": "url",
+                  "alert": false,
+                  "policy": true,
+                  "visible": true,
+                  "locked": false,
+                  "options": [],
+                  "collection": null,
+                  "validator": "DomainDSP",
+                  "labelKey": "systemSetup.label.domain"
+                },
+                {
+                  "id": "host-name",
+                  "hardPath": "Ethernet.HostName",
+                  "softPath": "Ethernet.Hostname",
+                  "default": "",
+                  "type": "TextBox",
+                  "required": true,
+                  "mask": "",
+                  "placeholder": "host-name",
+                  "alert": false,
+                  "policy": false,
+                  "visible": true,
+                  "locked": false,
+                  "options": [],
+                  "collection": null,
+                  "validator": "HostName",
+                  "labelKey": "systemSetup.label.hostName"
+                },
+                {
+                  "id": "nic-1-dhcp",
+                  "hardPath": "Ethernet.Adapters.0.IPv4.IsDhcpEnabled",
+                  "softPath": "Ethernet.Adapters[0].IPv4.IsDhcpEnabled",
+                  "default": false,
+                  "type": "InputSwitch",
+                  "required": false,
+                  "mask": "",
+                  "placeholder": "",
+                  "alert": false,
+                  "policy": true,
+                  "visible": true,
+                  "locked": false,
+                  "options": [
+                    {
+                      "label": "enable",
+                      "value": true
+                    },
+                    {
+                      "label": "disable",
+                      "value": false
+                    }
+                  ],
+                  "collection": null,
+                  "labelKey": "systemSetup.label.DHCP"
+                },
+                {
+                  "id": "nic-1-ip-address",
+                  "type": "TextBox",
+                  "required": true,
+                  "mask": "",
+                  "placeholderKey": "ip-address",
+                  "alert": false,
+                  "policy": false,
+                  "visible": true,
+                  "locked": false,
+                  "options": [],
+                  "collection": null,
+                  "labelKey": "systemSetup.label.ipAddress",
+                  "hardPath": "Ethernet.Adapters.0.IPv4.Addresses.0.Address",
+                  "softPath": "Ethernet.Adapters[0].IPv4.Addresses[0].Address",
+                  "validator": "IpAddress"
+                },
+                {
+                  "id": "nic-1-subnet-mask",
+                  "type": "TextBox",
+                  "required": true,
+                  "mask": "",
+                  "placeholderKey": "ip-address",
+                  "alert": false,
+                  "policy": true,
+                  "visible": true,
+                  "locked": false,
+                  "options": [],
+                  "collection": null,
+                  "labelKey": "systemSetup.label.subnetMask",
+                  "hardPath": "Ethernet.Adapters.0.IPv4.Addresses.0.SubnetMask",
+                  "softPath": "Ethernet.Adapters[0].IPv4.Addresses[0].SubnetMask",
+                  "validator": "SubnetMask"
+                },
+                {
+                  "id": "nic-1-def-router",
+                  "type": "TextBox",
+                  "required": true,
+                  "mask": "",
+                  "placeholderKey": "ip-address",
+                  "alert": false,
+                  "policy": true,
+                  "visible": true,
+                  "locked": false,
+                  "options": [],
+                  "collection": null,
+                  "labelKey": "systemSetup.label.defaultGateway",
+                  "hardPath": "Ethernet.Adapters.0.IPv4.DefaultGateway",
+                  "softPath": "Ethernet.Adapters[0].IPv4.DefaultGateway",
+                  "validator": "IpAddress"
+                },
+                {
+                  "id": "nic-1-primary-dns",
+                  "type": "TextBox",
+                  "required": true,
+                  "mask": "",
+                  "placeholderKey": "ip-address",
+                  "alert": false,
+                  "policy": true,
+                  "visible": true,
+                  "locked": false,
+                  "options": [],
+                  "collection": null,
+                  "labelKey": "systemSetup.label.primaryStaticDNS",
+                  "hardPath": "Ethernet.Adapters.0.IPv4.StaticDns.0",
+                  "softPath": "Ethernet.Adapters[0].IPv4.StaticDns[0]",
+                  "validator": "IpAddress"
+                },
+                {
+                  "id": "nic-1-secondary-dns",
+                  "type": "TextBox",
+                  "required": true,
+                  "mask": "",
+                  "placeholderKey": "ip-address",
+                  "alert": false,
+                  "policy": true,
+                  "visible": true,
+                  "locked": false,
+                  "options": [],
+                  "collection": null,
+                  "labelKey": "systemSetup.label.secondaryStaticDNS",
+                  "hardPath": "Ethernet.Adapters.0.IPv4.StaticDns.1",
+                  "softPath": "Ethernet.Adapters[0].IPv4.StaticDns[1]",
+                  "validator": "IpAddress"
+                }
+              ],
+              "labelKey": "systemSetup.label.networkConfiguration"
+            }
+          ],
+          "labelKey": "systemSetup.label.network"
+        }
+      ],
+      "labelKey": "systemSetup.label.systemSetup"
+    }
+  ],
+  "StatusViewModel": [
+    {
+      "id": "categoryDevice",
+      "labelKey": "statusTab.label.device",
+      "name": "device",
+      "selected": true,
+      "categories": [],
+      "visible": true,
+      "settings": [
+        {
+          "id": "device-model",
+          "labelKey": "device-model",
+          "hardPath": "DeviceInfo.Model",
+          "softPath": "DeviceInfo.Model",
+          "visible": true,
+          "type": "TextBox"
+        },
+        {
+          "id": "serial-number",
+          "labelKey": "serial-number",
+          "hardPath": "DeviceInfo.SerialNumber",
+          "softPath": "DeviceInfo.SerialNumber",
+          "visible": true,
+          "type": "TextBox",
+          "default": ""
+        },
+        {
+          "id": "firmware-version",
+          "labelKey": "statusTab.label.firmwareVersion",
+          "hardPath": "DeviceInfo.DeviceVersion",
+          "softPath": "DeviceInfo.DeviceVersion",
+          "visible": true,
+          "type": "TextBox",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "id": "categoryNetwork",
+      "labelKey": "statusTab.label.network",
+      "name": "network",
+      "selected": false,
+      "categories": [],
+      "visible": true,
+      "settings": [
+        {
+          "id": "status-host-name",
+          "labelKey": "status-host-name",
+          "hardPath": "Ethernet.HostName",
+          "softPath": "Ethernet.HostName",
+          "visible": true,
+          "type": "TextBox",
+          "default": "",
+          "options": []
+        },
+        {
+          "id": "status-domain-name",
+          "labelKey": "status-domain-name",
+          "hardPath": "Ethernet.DomainName",
+          "softPath": "Ethernet.DomainName",
+          "visible": true,
+          "type": "TextBox",
+          "default": "",
+          "options": []
+        },
+        {
+          "id": "status-is-dhcp-enabled",
+          "labelKey": "nic-1-dhcp-enabled",
+          "hardPath": "Ethernet.Adapters.0.IPv4.IsDhcpEnabled",
+          "softPath": "Ethernet.Adapters[0].IPv4.IsDhcpEnabled",
+          "visible": true,
+          "type": "TextBox",
+          "default": "",
+          "translateValue": true,
+          "options": [
+            {
+              "label": "true",
+              "value": true
+            },
+            {
+              "label": "false",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": "nic-1-ip-address",
+          "labelKey": "nic-1-ip-address",
+          "hardPath": "Ethernet.Adapters.0.IPv4.Addresses.0.Address",
+          "softPath": "Ethernet.Adapters[0].IPv4.Addresses[0].Address",
+          "visible": true,
+          "type": "TextBox",
+          "default": "",
+          "options": []
+        },
+        {
+          "id": "nic-1-def-router",
+          "labelKey": "nic-1-def-router",
+          "hardPath": "Ethernet.Adapters.0.IPv4.DefaultGateway",
+          "softPath": "Ethernet.Adapters[0].IPv4.DefaultGateway",
+          "visible": true,
+          "type": "TextBox",
+          "default": ""
+        },
+        {
+          "id": "nic-1-dns-servers",
+          "labelKey": "nic-1-dns-servers",
+          "hardPath": "Ethernet.Adapters.0.IPv4.DnsServers",
+          "softPath": "Ethernet.Adapters[0].IPv4.DnsServers",
+          "visible": true,
+          "type": "TextBox",
+          "default": ""
+        },
+        {
+          "id": "nic-1-link",
+          "labelKey": "nic-1-link",
+          "hardPath": "Ethernet.Adapters.0.LinkStatus",
+          "softPath": "Ethernet.Adapters[0].LinkStatus",
+          "visible": true,
+          "type": "TextBox",
+          "default": "",
+          "translateValue": true,
+          "options": [
+            {
+              "label": "true",
+              "value": true
+            },
+            {
+              "label": "false",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": "nic-1-mac-address",
+          "labelKey": "nic-1-mac-address",
+          "scope": "local",
+          "hardPath": "Ethernet.Adapters.0.MacAddress",
+          "softPath": "Ethernet.Adapters[0].MacAddress",
+          "visible": true,
+          "type": "TextBox",
+          "default": ""
+        },
+        {
+          "id": "adapter1.label.macAddress",
+          "labelKey": "statusTab.label.macAddress",
+          "hardPath": "Ethernet.Adapters.0.MACAddress",
+          "softPath": "Ethernet.Adapters[0].MACAddress",
+          "scope": "XIO",
+          "default": "",
+          "policy": true,
+          "visible": true,
+          "locked": false,
+          "type": "TextBox",
+          "required": false,
+          "mask": "",
+          "placeholderKey": "",
+          "alert": false,
+          "options": null,
+          "collection": null
+        },
+        {
+          "id": "nic-1-subnet-mask",
+          "labelKey": "nic-1-subnet-mask",
+          "hardPath": "Ethernet.Adapters.0.IPv4.Addresses.0.SubnetMask",
+          "softPath": "Ethernet.Adapters[0].IPv4.Addresses[0].SubnetMask",
+          "visible": true,
+          "type": "TextBox",
+          "default": ""
+        }
+      ]
+    }
+  ]
+}

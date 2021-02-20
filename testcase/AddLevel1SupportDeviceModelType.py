@@ -79,13 +79,14 @@ class AddL1SupportDeviceModelType:
                     time.sleep(2)
                     self.model_type_flag = True
             print("Creation of Level 1 support Device Model Type files are successful")
-            time.sleep(5)
+
         except Exception as err:
             print("Creation of Level 1 support Device Model Type files failed %s" % err)
 
     def push_files_to_remote_repo(self):
         global repo_path, jira_ticket
         try:
+
             if self.model_type_flag:
                 git_push_status = git.git_push_oper(repo_path=repo_path, jira_ticket=jira_ticket)
                 if git_push_status:

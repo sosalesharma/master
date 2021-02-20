@@ -1,0 +1,9 @@
+{
+  "DeviceModel": "PC-350V-12",
+  "PropertyName": "Settings Delivery Status",
+  "Values": {
+    "Blocked": "Blocked",
+    "Unblocked": "Unblocked"
+  },
+  "id": "c270c044-a67b-4f65-9a45-7065af39ec95"
+}

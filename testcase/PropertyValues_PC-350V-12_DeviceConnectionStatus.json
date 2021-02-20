@@ -1,0 +1,9 @@
+{
+  "DeviceModel": "PC-350V-12",
+  "PropertyName": "Device Connection Status",
+  "Values": {
+    "Offline": "OFFLINE",
+    "Online": "ONLINE"
+  },
+  "id": "85879249-f156-4272-b628-53e70fb85548"
+}

@@ -1,0 +1,9 @@
+{
+  "DeviceModel": "PC-350V-12",
+  "PropertyName": "Adapter 1 Is DHCP Enabled",
+  "Values": {
+    "Disable": false,
+    "Enable": true
+  },
+  "id": "463ba4bc-1a99-42e9-a8f2-9a97bd97ed5b"
+}
