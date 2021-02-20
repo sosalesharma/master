@@ -79,6 +79,7 @@ class AddL1SupportDeviceModelType:
                     time.sleep(2)
                     self.model_type_flag = True
             print("Creation of Level 1 support Device Model Type files are successful")
+            time.sleep(5)
         except Exception as err:
             print("Creation of Level 1 support Device Model Type files failed %s" % err)
 
