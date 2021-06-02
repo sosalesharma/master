@@ -50,5 +50,18 @@
     "PREUSW": "3",
     "PRDUSE": "3",
     "PRDUSW": "3"
+  },
+  {
+    "App Settings": "AccountActivationLink",
+    "API": "-zuoraaccountsvc-api12",
+    "DV2USE": "10",
+    "DV3USE": "3",
+    "VE2USE": "",
+    "HQEUSE": "3",
+    "QE3USE": "3",
+    "PREUSE": "20",
+    "PREUSW": "3",
+    "PRDUSE": "3",
+    "PRDUSW": "3"
   }
 ]
